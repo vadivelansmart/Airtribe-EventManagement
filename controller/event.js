@@ -91,7 +91,6 @@ event.post('/:id/register', verifyToken, async (req, res) => {
         time: updateEvent.time
        }
         const isMailSent = await sendMail(mailInfo);
-        console.log(isMailSent)
         return res.status(200).json({ message: `Congrulation you have Successfully Registered for the Event.`, event: updateEvent});
     } catch (err) {
         res.status(400).json(err)

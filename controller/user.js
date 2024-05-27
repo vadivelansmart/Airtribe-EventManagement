@@ -7,7 +7,6 @@ const user = express.Router();
 
 
 user.post('/login', async (req, res) => {
-    console.log(req.body);
     const isValid = loginValidator(req.body);
     if(!isValid) {
         return res.status(400).json({ message: "Invalid login Information" })
