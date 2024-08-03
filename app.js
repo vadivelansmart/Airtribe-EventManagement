@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const userRoutes = require('@controller/user')
 const eventRoutes = require('@controller/event')
 const participantRoutes = require('@controller/participant')
+const numCPUs = require('os').cpus().length;
 const path = require('path');
 const app = express();
 app.use(express.json())
@@ -19,5 +20,5 @@ try {
 }
 
 app.listen(3000, () => {
-    console.log("App is up and running");
+    console.log("App is up and running", numCPUs);
 })
